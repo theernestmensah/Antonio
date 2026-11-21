@@ -1,6 +1,16 @@
 # Launch status
 
-The improved site is local and has not been deployed. It retains the supplied campaign identity and photographs. Campaign approval and image permissions are pending.
+The redesigned site is local and has not been deployed. It retains supplied photographs and introduces a stronger green/red campaign presentation. Campaign approval and image permissions are pending.
+
+## New donation experience
+
+Donate buttons now appear in the desktop/mobile header and hero. A sticky mobile shortcut appears after the hero and hides while the donation section is visible. The dedicated donation section clearly states that payments are not open; the user has not chosen a destination.
+
+To activate a real hosted payment page, set `donationUrl` in `assets/campaign-config.js` to the campaign-approved HTTPS link. The page keeps payments disabled for missing, invalid or non-HTTPS configuration. No card information, personal data or donations are collected by this site. Do not enter private API keys into that public configuration file. Update the privacy notice to name the selected payment service before activation.
+
+## Upload package
+
+Run `python tools/package.py` after any domain or source updates. Upload the contents of `publish/`, or extract `campaign-site.zip` into the public site root. The package excludes backups, development tools and unused legacy bundles.
 
 ## Completed
 

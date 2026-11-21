@@ -10,7 +10,7 @@ class Page(HTMLParser):
   if tag=='h1':self.h1+=1
   if tag in ['a','link'] and 'href' in a:self.links.append(a['href'])
   if tag in ['img','script'] and 'src' in a:self.links.append(a['src'])
-  if tag=='img' and not a.get('alt'):self.errors.append('Missing image alt')
+  if tag=='img' and 'alt' not in a:self.errors.append('Missing image alt')
 for name in ['index.html','privacy.html','404.html']:
  p=Page();s=(r/name).read_text(encoding='utf-8');p.feed(s)
  assert p.h1==1,(name,'h1 count',p.h1)
